@@ -23,6 +23,33 @@ public class Triangle {
         }
     }
 
+    public boolean isPointInCircumcircle(Point p){
+        // Check if point lies in circumcircle by calculating determinant
+        double a11 = a.getX() - p.getX();
+        double a21 = b.getX() - p.getX();
+        double a31 = c.getX() - p.getX();
+
+        double a12 = a.getY() - p.getY();
+        double a22 = b.getY() - p.getY();
+        double a32 = c.getY() - p.getY();
+
+        double a13 = (a.getX() - p.getX()) * (a.getX() - p.getX()) + (a.getY() - p.getY()) * (a.getY() - p.getY());
+        double a23 = (b.getX() - p.getX()) * (b.getX() - p.getX()) + (b.getY() - p.getY()) * (b.getY() - p.getY());
+        double a33 = (c.getX() - p.getX()) * (c.getX() - p.getX()) + (c.getY() - p.getY()) * (c.getY() - p.getY());
+
+        double det = a11 * a22 * a33 + a12 * a23 * a31 + a13 * a21 * a32 - a13 * a22 * a31 - a12 * a21 * a33 - a11 * a23 * a32;
+
+        // Check orientation of the traingle to determine sign of determinant
+        if(isClockWise() && det > 0){
+            return true;
+        }
+        if(!isClockWise() && det < 0){
+            return true;
+        }
+
+        return false;
+    }
+
     public Point getA() {
         return a;
     }
@@ -66,6 +93,24 @@ public class Triangle {
         }
 
         return false;
+    }
+
+    // Checks if orientation of triangle is clockwise or anticlockwise
+    private boolean isClockWise(){
+        double a11 = a.getX() - c.getX();
+        double a21 = b.getX() - c.getX();
+
+        double a12 = a.getY() - c.getY();
+        double a22 = b.getY() - c.getY();
+
+        double det = a11 * a22 - a12 * a21;
+
+        if(det > 0){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
 }
