@@ -39,7 +39,7 @@ public class Triangle {
 
         double det = a11 * a22 * a33 + a12 * a23 * a31 + a13 * a21 * a32 - a13 * a22 * a31 - a12 * a21 * a33 - a11 * a23 * a32;
 
-        // Check orientation of the traingle to determine sign of determinant
+        // Check orientation of the triangle to determine sign of determinant
         if(isClockWise() && det > 0){
             return true;
         }
@@ -47,6 +47,27 @@ public class Triangle {
             return true;
         }
 
+        return false;
+    }
+
+    public Point getVertexNotOnEdge(Edge edge){
+        if(this.a != edge.getA() && this.a != edge.getB()){
+            return this.a;
+        }
+        if(this.b != edge.getA() && this.b != edge.getB()){
+            return this.b;
+        }
+        if(this.c != edge.getA() && this.c != edge.getB()){
+            return this.c;
+        }
+        return null;
+    }
+
+    // Checks if the triangle has an edge
+    public boolean hasEdge(Edge edge){
+        if((this.a == edge.getA() || this.b == edge.getA() || this.c == edge.getA()) && (this.a == edge.getB() || this.b == edge.getB() || this.c == edge.getB())){
+            return true;
+        }
         return false;
     }
 
