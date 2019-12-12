@@ -21,9 +21,9 @@ public class Main implements GLEventListener, MouseListener {
 
     private static final Dimension DIMENSION = new Dimension(640, 480);
 
-    private static final Color COLOR_TRIANGLE_FILL = new Color(26, 121, 121);
-    private static final Color COLOR_TRIANGLE_EDGES = new Color(5, 234, 234);
-    private static final Color COLOR_TRIANGLE_BORDER = new Color(241, 241, 121);
+    private static final Color COLOR_TRIANGLE_FILL = new Color(121, 32, 17);
+    private static final Color COLOR_TRIANGLE_EDGES = new Color(234, 160, 16);
+    private static final Color COLOR_TRIANGLE_BORDER = new Color(55, 241, 33);
     private static final Color COLOR_BACKGROUND = new Color(47, 47, 47);
 
     Triangulation delaunayTriangulator;
