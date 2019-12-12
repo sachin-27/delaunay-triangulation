@@ -16,7 +16,23 @@ public class Point {
     }
 
     public double crossProduct(Point p){
-        return this.y-p.getX() - p.getY()-this.x;
+        return this.y*p.getX() - p.getY()*this.x;
+    }
+
+    public double mag(){
+        return Math.sqrt(this.x * this.x + this.y * this.y);
+    }
+
+    public Point add(Point p){
+        return new Point(this.x + p.getX(), this.y + p.getY());
+    }
+
+    public Point multiplyWithScalar(double scalar){
+        return new Point(this.x * scalar, this.y * scalar);
+    }
+
+    public double dot(Point p){
+        return this.x * p.getX() + this.y + p.getY();
     }
 
     public double getX() {

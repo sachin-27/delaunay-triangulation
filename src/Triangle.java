@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Triangle {
 
     private Point a;
@@ -16,6 +18,15 @@ public class Triangle {
         double signPCA = p.subtract(c).crossProduct(a.subtract(c));
 
         if(hasSameSign(signPAB, signPBC) && hasSameSign(signPBC, signPCA)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public boolean hasPoint(Point p){
+        if(this.a == p || this.b == p || this.c == p){
             return true;
         }
         else{
@@ -48,6 +59,18 @@ public class Triangle {
         }
 
         return false;
+    }
+
+    public EdgeDistanceMap getNearestEdge(Point point){
+        EdgeDistanceMap[] edges = new EdgeDistanceMap[3];
+
+        edges[0] = new EdgeDistanceMap(new Edge(a, b), closestPoint(new Edge(a, b), point).subtract(point).mag());
+        edges[1] = new EdgeDistanceMap(new Edge(b, c), closestPoint(new Edge(b, c), point).subtract(point).mag());
+        edges[2] = new EdgeDistanceMap(new Edge(c, a), closestPoint(new Edge(c, a), point).subtract(point).mag());
+
+        Arrays.sort(edges);
+
+        return edges[0];
     }
 
     public Point getVertexNotOnEdge(Edge edge){
@@ -132,6 +155,20 @@ public class Triangle {
         else{
             return false;
         }
+    }
+
+    private Point closestPoint(Edge e, Point p){
+        Point ab = e.getB().subtract(e.getA());
+
+        double distFromA = p.subtract(e.getA()).dot(ab) / ab.dot(ab);
+
+        if(distFromA < 0){
+            distFromA = 0;
+        }
+        else if(distFromA > 1){
+            distFromA = 1;
+        }
+        return e.getA().add(ab.multiplyWithScalar(distFromA));
     }
 
 }

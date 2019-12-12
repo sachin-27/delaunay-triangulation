@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class TriangleSet {
@@ -29,12 +30,26 @@ public class TriangleSet {
         return null;
     }
 
+    public Edge getNearestEdge(Point point){
+        List<EdgeDistanceMap> edgeList = new ArrayList<>();
+
+        for(Triangle t : this.triangleList){
+            edgeList.add(t.getNearestEdge(point));
+        }
+
+        EdgeDistanceMap[] edgeListSorted = new EdgeDistanceMap[edgeList.size()];
+        edgeList.toArray(edgeListSorted);
+
+        Arrays.sort(edgeListSorted);
+        return edgeListSorted[0].getEdge();
+    }
+
     public void removeAllTrianglesWithPoint(Point p){
 
         List<Triangle> trianglesToBeRemoved = new ArrayList<>();
 
         for(Triangle t : triangleList){
-            if(t.doesContainPoint(p)){
+            if(t.hasPoint(p)){
                 trianglesToBeRemoved.add(t);
             }
         }
@@ -51,4 +66,16 @@ public class TriangleSet {
         return null;
     }
 
+    public Triangle findTriangleWithEdge(Edge edge){
+        for(Triangle t : triangleList){
+            if(t.hasEdge(edge)){
+                return t;
+            }
+        }
+        return null;
+    }
+
+    public List<Triangle> getTriangleList(){
+        return this.triangleList;
+    }
 }

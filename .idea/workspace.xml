@@ -2,11 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8163078-e20b-4c4a-91a2-e78f59bdffbd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TriangleSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Triangulation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/EdgeDistanceMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delaunay-triangulation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/delaunay-triangulation.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/delaunay-triangulation/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/delaunay-triangulation/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/delaunay-triangulation/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/delaunay-triangulation/Point.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/delaunay-triangulation/Triangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/delaunay-triangulation/Triangle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/delaunay-triangulation/TriangleSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/delaunay-triangulation/TriangleSet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Point.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Triangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TriangleSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TriangleSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Triangulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Triangulation.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,9 +39,10 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jogamp-all-platforms/jar/jogl-all.jar!/" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -48,6 +56,20 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="delaunay-triangulation" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -60,7 +82,10 @@
       <updated>1575798738970</updated>
       <workItem from="1575798740329" duration="4422000" />
       <workItem from="1575998355015" duration="4602000" />
-      <workItem from="1576108239416" duration="2021000" />
+      <workItem from="1576108239416" duration="2331000" />
+      <workItem from="1576128493861" duration="8000" />
+      <workItem from="1576160269293" duration="5453000" />
+      <workItem from="1576175796734" duration="1835000" />
     </task>
     <servers />
   </component>
@@ -79,5 +104,46 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Triangulation.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Triangulation.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>171</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Triangulation.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Triangulation.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Triangulation.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Triangulation.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
