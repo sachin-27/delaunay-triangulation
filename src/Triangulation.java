@@ -27,11 +27,11 @@ public class Triangulation {
             maxOfAllCoordinates = Math.max(p.getX(), Math.max(p.getY(), maxOfAllCoordinates));
         }
 
-        maxOfAllCoordinates *= 16;
+        maxOfAllCoordinates *= 20;
 
-        Point p1 = new Point(0, 3 * maxOfAllCoordinates);
-        Point p2 = new Point(3 * maxOfAllCoordinates, 0);
-        Point p3 = new Point(-3 * maxOfAllCoordinates, -3 * maxOfAllCoordinates);
+        Point p1 = new Point(0, 1 * maxOfAllCoordinates);
+        Point p2 = new Point(1 * maxOfAllCoordinates, 0);
+        Point p3 = new Point(-1 * maxOfAllCoordinates, -1 * maxOfAllCoordinates);
 
         Triangle superTriangle = new Triangle(p1, p2, p3);
 

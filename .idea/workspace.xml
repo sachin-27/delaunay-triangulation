@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8163078-e20b-4c4a-91a2-e78f59bdffbd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/delaunay-triangulation/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/delaunay-triangulation/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Triangulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Triangulation.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +77,8 @@
       <workItem from="1576108239416" duration="2331000" />
       <workItem from="1576128493861" duration="8000" />
       <workItem from="1576160269293" duration="5453000" />
-      <workItem from="1576175796734" duration="2014000" />
+      <workItem from="1576175796734" duration="2386000" />
+      <workItem from="1576207867730" duration="5197000" />
     </task>
     <servers />
   </component>

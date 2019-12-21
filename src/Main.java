@@ -21,16 +21,16 @@ public class Main implements GLEventListener, MouseListener {
 
     private static final Dimension DIMENSION = new Dimension(640, 480);
 
-    private static final Color COLOR_TRIANGLE_FILL = new Color(121, 32, 17);
-    private static final Color COLOR_TRIANGLE_EDGES = new Color(234, 160, 16);
-    private static final Color COLOR_TRIANGLE_BORDER = new Color(55, 241, 33);
+    private static final Color COLOR_TRIANGLE_FILL = new Color(55, 241, 33);
+    private static final Color COLOR_TRIANGLE_VERTEX = new Color(234, 28, 48);
+    private static final Color COLOR_TRIANGLE_BORDER = new Color(241, 70, 223);
     private static final Color COLOR_BACKGROUND = new Color(47, 47, 47);
 
     Triangulation delaunayTriangulator;
-    List<Point> pointSet = new ArrayList<>();
+    List<Point> points = new ArrayList<>();
 
     public static void main(String[] args) {
-        Frame frame = new Frame("Delaunay Triangulation Example");
+        Frame frame = new Frame("Delaunay Triangulation");
         frame.setResizable(false);
 
         GLCapabilities caps = new GLCapabilities(GLProfile.get("GL2"));
@@ -80,7 +80,7 @@ public class Main implements GLEventListener, MouseListener {
         gl.setSwapInterval(1);
         gl.glDisable(GL2.GL_CULL_FACE);
 
-        delaunayTriangulator = new Triangulation(pointSet);
+        delaunayTriangulator = new Triangulation(points);
     }
 
     public void reshape(GLAutoDrawable drawable, int x, int y, int width, int height) {
@@ -119,8 +119,8 @@ public class Main implements GLEventListener, MouseListener {
         }
 
         gl.glEnd();
-        gl.glColor3ub((byte) COLOR_TRIANGLE_EDGES.getRed(), (byte) COLOR_TRIANGLE_EDGES.getGreen(),
-                (byte) COLOR_TRIANGLE_EDGES.getBlue());
+        gl.glColor3ub((byte) COLOR_TRIANGLE_VERTEX.getRed(), (byte) COLOR_TRIANGLE_VERTEX.getGreen(),
+                (byte) COLOR_TRIANGLE_VERTEX.getBlue());
         gl.glBegin(GL.GL_LINES);
 
         for (int i = 0; i < delaunayTriangulator.getTriangles().size(); i++) {
@@ -147,7 +147,7 @@ public class Main implements GLEventListener, MouseListener {
                 (byte) COLOR_TRIANGLE_BORDER.getBlue());
         gl.glBegin(GL.GL_POINTS);
 
-        for (Point p : pointSet) {
+        for (Point p : points) {
             gl.glVertex2d(p.getX(), p.getY());
         }
 
@@ -168,8 +168,8 @@ public class Main implements GLEventListener, MouseListener {
     @Override
     public void mousePressed(MouseEvent e) {
         Point p = new Point(e.getPoint().x, e.getPoint().y);
-        pointSet.add(new Point(p.getX(), p.getY()));
-        if(pointSet.size() > 3) {
+        points.add(new Point(p.getX(), p.getY()));
+        if(points.size() >= 3) {
             delaunayTriangulator.triangulate();
         }
     }
